@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!---->
+
+  <div class="event-list">
+    <swiper-container
+      [pagination]="true"
+      [slidesPerView]="1"
+      [autoplay]="true"
+      [autoplayDisableOnInteraction]="false"
+      [autoplayDelay]="3000"
+    >
+      <swiper-slide *ngFor="let slide of event_list">
+        <div class="slide-card">
+          <img [src]="slide.image" />
+          <p>{{slide.description}}</p>
+          <p>{{slide.event_date}}</p>
+          <p>{{slide.location}}</p>
+          <p>{{slide.address}}</p>
+          <p>{{slide.city}}</p>
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+</ion-content>
